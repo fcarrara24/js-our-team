@@ -37,3 +37,18 @@ const employee = [
 
 
 ];
+
+//milestone 2: printing to console
+printToConsole();
+function printToConsole() {
+    //array selection
+    for (let employer of employee) {
+        console.group(employer.name)
+
+
+        for (let key in employer) {
+            console.log(key + ": " + employer[key])
+        }
+        console.groupEnd(employer.name)
+    }
+}
