@@ -12,3 +12,10 @@ body{
     background-color: var(--card-white);
     color: var(--text-gray);
 }
+
+.input, .btn-primary{
+    width: 400px;
+    align-self: center;
+    margin: 7px;
+    text-align: center;
+}

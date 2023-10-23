@@ -74,3 +74,25 @@ function printToScreen() {
 
     document.getElementById('printResult').innerHTML = outHtml;
 }
+
+
+const sendBtn = document.getElementById('send');
+//add a triggering method
+sendBtn.addEventListener('click', () => {
+    const valueList = document.getElementsByClassName('input');
+    employee.push({
+        name: valueList[0].value,
+        role: valueList[1].value,
+        picture: valueList[2].value,
+    });
+    printToConsole();
+    printToScreen();
+    reset(valueList);
+})
+
+function reset(valueList) {
+
+    for (let i = 0; i < valueList.length; i++) {
+        valueList[i].value = '';
+    }
+}
