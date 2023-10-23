@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 
@@ -27,11 +30,20 @@
         </div>
 
         <!-- adding a new member to the team -->
-        <div class="inputManagment d-flex flex-column">
+        <div class="inputManagment d-flex flex-column align-items-center" id="inputManager">
             <h2 class="text-center m-5">INSERISCI UN NUOVO UTENTE</h2>
-            <input type="text" name="name" id="name" text="" class="input">
-            <input type="text" name="role" id="role" text="" class="input">
-            <input type="text" name="picture" id="picture" text="" class="input">
+            <div class="wrapper">
+                <label for="name" class="text-center">nome&nbsp;&nbsp;</label>
+                <input type="text" name="name" id="name" text="" class="input">
+            </div>
+            <div class="wrapper">
+                <label for="role" class="text-center">ruolo&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" name="role" id="role" text="" class="input">
+            </div>
+            <div class="wrapper">
+                <label for="picture" class="text-center">picture</label>
+                <input type="text" name="picture" id="picture" text="" class="input">
+            </div>
             <div class="btn btn-primary" id="send">Invia</div>
         </div>
     </main>

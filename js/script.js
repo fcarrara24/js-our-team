@@ -7,32 +7,32 @@ const employee = [
     {
         name: "Wayne Barnett",
         role: "Founder & CEO",
-        picture: "wayne-barnett-founder-ceo.jpg",
+        picture: "img/wayne-barnett-founder-ceo.jpg",
     },
     {
         name: "Angela Caroll",
         role: "Chief Editor",
-        picture: "angela-caroll-chief-editor.jpg",
+        picture: "img/angela-caroll-chief-editor.jpg",
     },
     {
         name: "Walter Gordon",
         role: "Office Manager",
-        picture: "walter-gordon-office-manager.jpg",
+        picture: "img/walter-gordon-office-manager.jpg",
     },
     {
         name: "Angela Lopez",
         role: "Social Media Manafewr",
-        picture: "angela-lopez-social-media-manager.jpg",
+        picture: "img/angela-lopez-social-media-manager.jpg",
     },
     {
         name: "Scott Estrada",
         role: "Developer",
-        picture: "scott-estrada-developer.jpg",
+        picture: "img/scott-estrada-developer.jpg",
     },
     {
         name: "Barbara Ramos",
         role: "Graphic Designer",
-        picture: "barbara-ramos-graphic-designer.jpg",
+        picture: "img/barbara-ramos-graphic-designer.jpg",
     },
 
 
@@ -63,7 +63,7 @@ function printToScreen() {
     for (let employer of employee) {
         outHtml += `<div class="col-4  border-0 pb-4">
         <div class="innerCard">
-            <img class="w-100" src="img/${employer.picture}" alt="wayne">
+            <img class="w-100" src="${employer.picture}" alt="wayne">
                 <div class="cardContent py-3">
                     <h4 class="cardName text-capitalize text-center">${employer.name}</h4>
                     <h5 class="cardRole text-capitalize text-center">${employer.role}</h5>
@@ -80,6 +80,12 @@ const sendBtn = document.getElementById('send');
 //add a triggering method
 sendBtn.addEventListener('click', () => {
     const valueList = document.getElementsByClassName('input');
+    if (!validValues(valueList)) {
+        for (let i = 0; i < valueList.length; i++) {
+            valueList[i].value = ''
+        }
+        return;
+    }
     employee.push({
         name: valueList[0].value,
         role: valueList[1].value,
@@ -96,3 +102,14 @@ function reset(valueList) {
         valueList[i].value = '';
     }
 }
+
+function validValues(valueList) {
+    for (let i = 0; i < valueList.length; i++) {
+        //value not found
+        if (!valueList[i].value) {
+            return false
+        }
+    }
+    return true;
+}
+
