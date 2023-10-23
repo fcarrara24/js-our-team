@@ -44,11 +44,33 @@ function printToConsole() {
     //array selection
     for (let employer of employee) {
         console.group(employer.name)
-
-
         for (let key in employer) {
             console.log(key + ": " + employer[key])
         }
         console.groupEnd(employer.name)
     }
+}
+
+//milestone 2; printing the list on the screen 
+
+/*
+
+*/
+
+printToScreen();
+function printToScreen() {
+    let outHtml = ``;
+    for (let employer of employee) {
+        outHtml += `<div class="col-4  border-0 pb-4">
+        <div class="innerCard">
+            <img class="w-100" src="img/${employer.picture}" alt="wayne">
+                <div class="cardContent py-3">
+                    <h4 class="cardName text-capitalize text-center">${employer.name}</h4>
+                    <h5 class="cardRole text-capitalize text-center">${employer.role}</h5>
+                </div>
+        </div>
+        </div>`;
+    }
+
+    document.getElementById('printResult').innerHTML = outHtml;
 }

@@ -10,4 +10,5 @@ body{
 
 .innerCard{
     background-color: var(--card-white);
+    color: var(--text-gray);
 }
